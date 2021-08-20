@@ -4,3 +4,5 @@ Amigas Vntg's repository of item pictures. Items uploaded to [Amigas Vntg Websit
 
 Pictures are created using a 4:3 aspect ratio, thus, following a normalized size of 1920 × 1440 px (height and width, respectively.) All the pictures are in the `.jpg` format, saved with the highest quality setting.
 
+Each Campaign has a `.csv` file named as the campaign prefixing a period. In the case of the aforementioned campaing, the file is named `.AVC_2021_001.csv`. These files are used to import the data of each item to the website.
+
