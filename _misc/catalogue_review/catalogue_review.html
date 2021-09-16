@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Review</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            font-family: "Roboto", sans-serif;
+        }
+        .logo {
+            text-align: center;
+            padding: 2rem;
+        }
+        .logo > img {
+            width: 150px;
+        }
+        .selt {
+            text-align: center;
+            padding: 2rem;
+        }
+        .selt > label {
+            display: block;
+        }
+        .hall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .hall > figure {
+            margin: 1rem 3rem;
+            border: 1px solid transparent;
+            transition: 0.3s ease;;
+        }
+        .hall > figure > img {
+            height: 500px;
+        }
+        .hall > figure > figcaption {
+            margin: 1rem 0;
+            line-height: 1.75;
+            text-align: center;
+        }
+        .hall > figure > figcaption::after {
+            content: "$20.000";
+            display: block;
+            font-weight: 700;
+        }
+        .hall > figure:hover {
+            box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 10%);
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://images.jumpseller.com/store/amigasvntg/store/logo/drawing.svg?1622693091"/>
+    </div>
+    <div class="selt">
+        <select name="spec" id="spec">
+            <option value="0">all</option>
+            <option value="1">front</option>
+            <option value="2">back</option>
+            <option value="3">detail 1</option>
+            <option value="4">detail 2</option>
+        </select>
+    </div>
+    <div class="hall">
+    </div>
+    <script>
+        // for n in *.jpg; do printf '\"%s\",' "$n"; done ; echo
+        const spec = document.querySelector('#spec')
+        const hall = document.querySelector(".hall")
+        const imgs = ["BLU-AZL-2021003-008-1.jpg","BLU-AZL-2021003-008-2.jpg","BLU-AZL-2021003-008-3.jpg","BLU-AZL-2021003-008-4.jpg","BLU-AZL-2021003-009-1.jpg","BLU-AZL-2021003-009-2.jpg","BLU-AZL-2021003-009-3.jpg","BLU-AZL-2021003-009-4.jpg","BLU-CLT-2021003-026-1.jpg","BLU-CLT-2021003-026-2.jpg","BLU-CLT-2021003-026-3.jpg","BLU-CLT-2021003-026-4.jpg","BLU-MLT-2021003-012-1.jpg","BLU-MLT-2021003-012-2.jpg","BLU-MLT-2021003-012-3.jpg","BLU-MLT-2021003-012-4.jpg","BLU-MLT-2021003-027-1.jpg","BLU-MLT-2021003-027-2.jpg","BLU-MLT-2021003-027-3.jpg","BLU-MLT-2021003-027-4.jpg","BLU-NGR-2021003-013-1.jpg","BLU-NGR-2021003-013-2.jpg","BLU-NGR-2021003-013-3.jpg","BLU-NGR-2021003-013-4.jpg","BLU-RJO-2021003-010-1.jpg","BLU-RJO-2021003-010-2.jpg","BLU-RJO-2021003-010-3.jpg","BLU-RJO-2021003-010-4.jpg","BLU-RSD-2021003-011-1.jpg","BLU-RSD-2021003-011-2.jpg","BLU-RSD-2021003-011-3.jpg","BLU-RSD-2021003-011-4.jpg","BLZ-AZL-2021003-029-1.jpg","BLZ-AZL-2021003-029-2.jpg","BLZ-AZL-2021003-029-3.jpg","BLZ-AZL-2021003-029-4.jpg","BLZ-GRS-2021003-019-1.jpg","BLZ-GRS-2021003-019-2.jpg","BLZ-GRS-2021003-019-3.jpg","BLZ-GRS-2021003-019-4.jpg","BLZ-NGR-2021003-020-1.jpg","BLZ-NGR-2021003-020-2.jpg","BLZ-NGR-2021003-020-3.jpg","BLZ-NGR-2021003-020-4.jpg","BLZ-VRD-2021003-018-1.jpg","BLZ-VRD-2021003-018-2.jpg","BLZ-VRD-2021003-018-3.jpg","BLZ-VRD-2021003-018-4.jpg","BLZ-VRD-2021003-028-1.jpg","BLZ-VRD-2021003-028-2.jpg","BLZ-VRD-2021003-028-3.jpg","BLZ-VRD-2021003-028-4.jpg","CHL-BGE-2021003-014-1.jpg","CHL-BGE-2021003-014-2.jpg","CHL-BGE-2021003-014-3.jpg","CHL-BGE-2021003-014-4.jpg","CHL-GRS-2021003-016-1.jpg","CHL-GRS-2021003-016-2.jpg","CHL-GRS-2021003-016-3.jpg","CHL-GRS-2021003-016-4.jpg","CHL-NVY-2021003-015-1.jpg","CHL-NVY-2021003-015-2.jpg","CHL-NVY-2021003-015-3.jpg","CHL-NVY-2021003-015-4.jpg","CHL-RJO-2021003-017-1.jpg","CHL-RJO-2021003-017-2.jpg","CHL-RJO-2021003-017-3.jpg","CHL-RJO-2021003-017-4.jpg","FLD-BGE-2021003-001-1.jpg","FLD-BGE-2021003-001-2.jpg","FLD-BGE-2021003-001-3.jpg","FLD-BGE-2021003-001-4.jpg","FLD-CFE-2021003-002-1.jpg","FLD-CFE-2021003-002-2.jpg","FLD-CFE-2021003-002-3.jpg","FLD-CFE-2021003-002-4.jpg","FLD-MLT-2021003-003-1.jpg","FLD-MLT-2021003-003-2.jpg","FLD-MLT-2021003-003-3.jpg","FLD-MLT-2021003-003-4.jpg","FLD-NGR-2021003-004-1.jpg","FLD-NGR-2021003-004-2.jpg","FLD-NGR-2021003-004-3.jpg","FLD-NGR-2021003-004-4.jpg","PNT-AZL-2021003-005-1.jpg","PNT-AZL-2021003-005-2.jpg","PNT-AZL-2021003-005-3.jpg","PNT-AZL-2021003-005-4.jpg","PNT-CFE-2021003-006-1.jpg","PNT-CFE-2021003-006-2.jpg","PNT-CFE-2021003-006-3.jpg","PNT-CFE-2021003-006-4.jpg","PNT-NGR-2021003-007-1.jpg","PNT-NGR-2021003-007-2.jpg","PNT-NGR-2021003-007-3.jpg","PNT-NGR-2021003-007-4.jpg","VST-AZL-2021003-022-1.jpg","VST-AZL-2021003-022-2.jpg","VST-AZL-2021003-022-3.jpg","VST-AZL-2021003-022-4.jpg","VST-AZL-2021003-023-1.jpg","VST-AZL-2021003-023-2.jpg","VST-AZL-2021003-023-3.jpg","VST-AZL-2021003-023-4.jpg","VST-MLT-2021003-021-1.jpg","VST-MLT-2021003-021-2.jpg","VST-MLT-2021003-021-3.jpg","VST-MLT-2021003-021-4.jpg","VST-MLT-2021003-024-1.jpg","VST-MLT-2021003-024-2.jpg","VST-MLT-2021003-024-3.jpg","VST-MLT-2021003-024-4.jpg","VST-MLT-2021003-025-1.jpg","VST-MLT-2021003-025-2.jpg","VST-MLT-2021003-025-3.jpg","VST-MLT-2021003-025-4.jpg","VST-MLT-2021003-025-5.jpg","VST-MLT-2021003-025-6.jpg","VST-MLT-2021003-030-1.jpg","VST-MLT-2021003-030-2.jpg","VST-MLT-2021003-030-3.jpg","VST-MLT-2021003-030-4.jpg","VST-NGR-2021003-031-1.jpg","VST-NGR-2021003-031-2.jpg","VST-NGR-2021003-031-3.jpg","VST-NGR-2021003-031-4.jpg"]
+        createHall(imgs, "0")
+        spec.onclick = (e) => {
+            e.preventDefault();
+            createHall(imgs, spec.selectedIndex)
+        };
+        function createHall(imgs, spec) {
+            hall.innerHTML = ""
+            i = selectImages(imgs, spec)
+            i.forEach(img => {
+                elFigure = document.createElement("figure")
+                elImage = document.createElement("img")
+                elImage.src = img
+                elCaption = document.createElement("figcaption")
+                elCaption.innerHTML = img
+                elFigure.appendChild(elImage)
+                elFigure.appendChild(elCaption)
+                hall.appendChild(elFigure)
+            })
+        }
+        function selectImages(imgs, spec) {
+            if (spec == "0") {
+                return imgs
+            } else {
+                return imgs.filter(img => img.slice(-5, -4) == spec)
+            }
+        }
+    </script>
+</body>
+</html>
