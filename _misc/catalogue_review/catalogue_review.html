@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogue Review</title>
+    <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
         html, body {
@@ -35,12 +35,14 @@
             align-items: center;
         }
         .hall > figure {
-            margin: 1rem 3rem;
-            border: 1px solid transparent;
-            transition: 0.3s ease;;
+            margin: 2rem 1rem;
+            border: 1px solid #eee;
+            transition: 0.3s ease;
         }
         .hall > figure > img {
             height: 500px;
+            padding:1rem;
+            padding-bottom: 0;
         }
         .hall > figure > figcaption {
             margin: 1rem 0;
@@ -53,8 +55,14 @@
             font-weight: 700;
         }
         .hall > figure:hover {
-            box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 10%);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                        0 2px 4px rgba(0,0,0,0.07), 
+                        0 4px 8px rgba(0,0,0,0.07), 
+                        0 8px 16px rgba(0,0,0,0.07),
+                        0 16px 32px rgba(0,0,0,0.07), 
+                        0 32px 64px rgba(0,0,0,0.07);
             border: 1px solid #ddd;
+            transform: scale(1.01);
         }
     </style>
 </head>
@@ -90,6 +98,9 @@
                 elFigure = document.createElement("figure")
                 elImage = document.createElement("img")
                 elImage.src = img
+                elImage.loading = "lazy"
+                elImage.width = "375"
+                elImage.height = "500"
                 elCaption = document.createElement("figcaption")
                 elCaption.innerHTML = img
                 elFigure.appendChild(elImage)
