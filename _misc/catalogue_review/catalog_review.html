@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            font-family: "Roboto", sans-serif;
+        }
+        .logo {
+            text-align: center;
+            padding: 2rem;
+            padding-top: 4rem;
+        }
+        .logo > img {
+            width: 150px;
+        }
+        .selt {
+            text-align: center;
+            padding: 2rem;
+        }
+        .selt > label {
+            display: block;
+        }
+        .hall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .hall > figure {
+            margin: 2rem 1rem;
+            border: 1px solid #eee;
+            transition: 0.3s ease;
+        }
+        .hall > figure > img {
+            height: 500px;
+            padding:1rem;
+            padding-bottom: 0;
+        }
+        .hall > figure > figcaption {
+            margin: 1rem 0;
+            line-height: 1.75;
+            text-align: center;
+        }
+        .hall > figure > figcaption::after {
+            content: "$20.000";
+            display: block;
+            font-weight: 700;
+        }
+        .hall > figure:hover {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                        0 2px 4px rgba(0,0,0,0.07), 
+                        0 4px 8px rgba(0,0,0,0.07), 
+                        0 8px 16px rgba(0,0,0,0.07),
+                        0 16px 32px rgba(0,0,0,0.07), 
+                        0 32px 64px rgba(0,0,0,0.07);
+            border: 1px solid #ddd;
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/RamonOpazo/AmigasVntg_Catalog/master/_misc/logo/png/AmigasVntg_300px.png"/>
+    </div>
+    <div class="selt">
+        <select name="spec" id="spec">
+            <option value="0">all</option>
+            <option value="1">front</option>
+            <option value="2">back</option>
+            <option value="3">detail 1</option>
+            <option value="4">detail 2</option>
+        </select>
+    </div>
+    <div class="hall">
+    </div>
+    <script>
+        // for n in *.jpg; do printf '\"%s\",' "$n"; done ; echo
+        const spec = document.querySelector('#spec')
+        const hall = document.querySelector(".hall")
+        const imgs = ["BLU-AZL-2021004-003-1.jpg","BLU-AZL-2021004-003-2.jpg","BLU-AZL-2021004-003-3.jpg","BLU-AZL-2021004-003-4.jpg","BLU-AZL-2021004-004-1.jpg","BLU-AZL-2021004-004-2.jpg","BLU-AZL-2021004-004-3.jpg","BLU-AZL-2021004-004-4.jpg","BLU-AZL-2021004-006-1.jpg","BLU-AZL-2021004-006-2.jpg","BLU-AZL-2021004-006-3.jpg","BLU-AZL-2021004-006-4.jpg","BLU-BLN-2021004-005-1.jpg","BLU-BLN-2021004-005-2.jpg","BLU-BLN-2021004-005-3.jpg","BLU-BLN-2021004-005-4.jpg","BLU-MLT-2021004-002-1.jpg","BLU-MLT-2021004-002-2.jpg","BLU-MLT-2021004-002-3.jpg","BLU-MLT-2021004-002-4.jpg","BLU-VRD-2021004-001-1.jpg","BLU-VRD-2021004-001-2.jpg","BLU-VRD-2021004-001-3.jpg","BLU-VRD-2021004-001-4.jpg","BLZ-AZL-2021004-010-1.jpg","BLZ-AZL-2021004-010-2.jpg","BLZ-AZL-2021004-010-3.jpg","BLZ-AZL-2021004-010-4.jpg","BLZ-MLT-2021004-009-1.jpg","BLZ-MLT-2021004-009-2.jpg","BLZ-MLT-2021004-009-3.jpg","BLZ-MLT-2021004-009-4.jpg","BLZ-NGR-2021004-007-1.jpg","BLZ-NGR-2021004-007-2.jpg","BLZ-NGR-2021004-007-3.jpg","BLZ-NGR-2021004-007-4.jpg","BLZ-RJO-2021004-008-1.jpg","BLZ-RJO-2021004-008-2.jpg","BLZ-RJO-2021004-008-3.jpg","BLZ-RJO-2021004-008-4.jpg","CHL-BLN-2021004-013-1.jpg","CHL-BLN-2021004-013-2.jpg","CHL-BLN-2021004-013-3.jpg","CHL-BLN-2021004-013-4.jpg","CHL-MLT-2021004-012-1.jpg","CHL-MLT-2021004-012-2.jpg","CHL-MLT-2021004-012-3.jpg","CHL-MLT-2021004-012-4.jpg","CHL-NGR-2021004-011-1.jpg","CHL-NGR-2021004-011-2.jpg","CHL-NGR-2021004-011-3.jpg","CHL-NGR-2021004-011-4.jpg","FLD-MLT-2021004-028-1.jpg","FLD-MLT-2021004-028-2.jpg","FLD-MLT-2021004-028-3.jpg","FLD-MLT-2021004-028-4.jpg","FLD-MLT-2021004-030-1.jpg","FLD-MLT-2021004-030-2.jpg","FLD-MLT-2021004-030-3.jpg","FLD-MLT-2021004-030-4.jpg","FLD-NGR-2021004-027-1.jpg","FLD-NGR-2021004-027-2.jpg","FLD-NGR-2021004-027-3.jpg","FLD-NGR-2021004-027-4.jpg","FLD-NVY-2021004-029-1.jpg","FLD-NVY-2021004-029-2.jpg","FLD-NVY-2021004-029-3.jpg","FLD-NVY-2021004-029-4.jpg","PNT-AZL-2021004-026-1.jpg","PNT-AZL-2021004-026-2.jpg","PNT-AZL-2021004-026-3.jpg","PNT-AZL-2021004-026-4.jpg","PNT-CFE-2021004-024-1.jpg","PNT-CFE-2021004-024-2.jpg","PNT-CFE-2021004-024-3.jpg","PNT-CFE-2021004-024-4.jpg","PNT-GRS-2021004-025-1.jpg","PNT-GRS-2021004-025-2.jpg","PNT-GRS-2021004-025-3.jpg","PNT-GRS-2021004-025-4.jpg","VST-AZL-2021004-021-1.jpg","VST-AZL-2021004-021-2.jpg","VST-AZL-2021004-021-3.jpg","VST-AZL-2021004-021-4.jpg","VST-BYN-2021004-015-1.jpg","VST-BYN-2021004-015-2.jpg","VST-BYN-2021004-015-3.jpg","VST-BYN-2021004-015-4.jpg","VST-BYN-2021004-018-1.jpg","VST-BYN-2021004-018-2.jpg","VST-BYN-2021004-018-3.jpg","VST-BYN-2021004-018-4.jpg","VST-MLT-2021004-019-1.jpg","VST-MLT-2021004-019-2.jpg","VST-MLT-2021004-019-3.jpg","VST-MLT-2021004-019-4.jpg","VST-MLT-2021004-020-1.jpg","VST-MLT-2021004-020-2.jpg","VST-MLT-2021004-020-3.jpg","VST-MLT-2021004-020-4.jpg","VST-MLT-2021004-022-1.jpg","VST-MLT-2021004-022-2.jpg","VST-MLT-2021004-022-3.jpg","VST-MLT-2021004-022-4.jpg","VST-MLT-2021004-023-1.jpg","VST-MLT-2021004-023-2.jpg","VST-MLT-2021004-023-3.jpg","VST-MLT-2021004-023-4.jpg","VST-NGR-2021004-016-1.jpg","VST-NGR-2021004-016-2.jpg","VST-NGR-2021004-016-3.jpg","VST-NGR-2021004-016-4.jpg","VST-RJO-2021004-014-1.jpg","VST-RJO-2021004-014-2.jpg","VST-RJO-2021004-014-3.jpg","VST-RJO-2021004-014-4.jpg","VST-RSD-2021004-017-1.jpg","VST-RSD-2021004-017-2.jpg","VST-RSD-2021004-017-3.jpg","VST-RSD-2021004-017-4.jpg"]
+        createHall(imgs, "0")
+        spec.onclick = (e) => {
+            e.preventDefault();
+            createHall(imgs, spec.selectedIndex)
+        };
+        function createHall(imgs, spec) {
+            hall.innerHTML = ""
+            i = selectImages(imgs, spec)
+            i.forEach(img => {
+                elFigure = document.createElement("figure")
+                elImage = document.createElement("img")
+                elImage.src = img
+                elImage.loading = "lazy"
+                elImage.width = "375"
+                elImage.height = "500"
+                elCaption = document.createElement("figcaption")
+                elCaption.innerHTML = img
+                elFigure.appendChild(elImage)
+                elFigure.appendChild(elCaption)
+                hall.appendChild(elFigure)
+            })
+        }
+        function selectImages(imgs, spec) {
+            if (spec == "0") {
+                return imgs
+            } else {
+                return imgs.filter(img => img.slice(-5, -4) == spec)
+            }
+        }
+    </script>
+</body>
+</html>
