@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto';
+            font-weight: 300;
+        }
+        body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .label {
+            position: relative;
+            padding: 3rem 1rem;
+            border-right: 1px dashed gray;
+            border-bottom: 1px dashed gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            height: 12vh;
+        }
+        .label:nth-child(12n+1), .label:nth-child(12n+2), .label:nth-child(12n+3) {
+            border-top: 1px dashed gray;
+        }
+        .label:nth-child(3n+1) {
+            border-left: 1px dashed gray;
+        }
+        .label::after, .label::before {
+            position: absolute;
+            left: 2rem;
+            top: calc(50% - 0.5rem);
+            content: "";
+            width: 0px;
+            height: 1rem;
+            border-left: 1px dashed gray
+        }
+        .label::after {
+            transform: rotate(90deg);
+        }
+        .label .empty {
+            content: "";
+            height: 3rem;
+            width: 20ch;
+            margin: 0;
+            border-bottom: 1px dashed gray;
+        }
+        .label img {
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+    <div class='label'><img src='./AmigasVntg_800px.png'><div class="empty"></div></div>
+</body>
+</html>

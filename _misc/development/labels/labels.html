@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+            html, body {
+                padding: 0;
+                margin: 0;
+                font-family: 'Roboto';
+                font-weight: 300;
+            }
+            body {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                /* padding: 1rem; */
+            }
+            .label {
+                padding: 3rem 1rem;
+                border-right: 1px dashed gray;
+                border-bottom: 1px dashed gray;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .label:nth-child(12n+1), .label:nth-child(12n+2), .label:nth-child(12n+3) {
+                border-top: 1px dashed gray;
+            }
+            .label:nth-child(3n+1) {
+                border-left: 1px dashed gray;
+            }
+            .label p {
+                padding: 0;
+                margin: 0;
+                line-height: 1.5;
+            }
+            .label p.name {
+                font-weight: 700;
+            }
+            .label img {
+                height: 40px;
+                margin-bottom: 1rem;
+            }
+            /* div.label::before {
+                width: 50%;
+                height: 40px;
+                display: block;
+                content: "";
+                background-image: url(./AmigasVntg_800px.png);
+                background-size:contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blusa puntitos multicolor</p><p>BLU-MLT-2021004-002</p><p>$8.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blusa flores pastel</p><p>BLU-AZL-2021004-004</p><p>$12.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blusa verde romántica</p><p>BLU-BLN-2021004-005</p><p>$12.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blusa bicolor</p><p>BLU-AZL-2021004-006</p><p>$14.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Tapado van Gogh</p><p>BLU-NGR-2021004-007</p><p>$12.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blazer terracota</p><p>BLZ-RJO-2021004-008</p><p>$16.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Tapado Flora</p><p>BLZ-MLT-2021004-009</p><p>$16.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Blazer indian chic</p><p>BLZ-AZL-2021004-010</p><p>$28.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Chaleco Peonia</p><p>CHL-NGR-2021004-011</p><p>$24.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Chaleco Ranco</p><p>CHL-MLT-2021004-012</p><p>$22.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Chaleco Navigare</p><p>CHL-BLN-2021004-013</p><p>$22.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Ágata</p><p>VST-BYN-2021004-015</p><p>$18.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido tulipán</p><p>VST-NGR-2021004-016</p><p>$16.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido sandía</p><p>VST-RSD-2021004-017</p><p>$24.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Gilda</p><p>VST-BYN-2021004-018</p><p>$26.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Laura</p><p>VST-MLT-2021004-019</p><p>$24.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Eloísa</p><p>VST-MLT-2021004-020</p><p>$24.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Marina</p><p>VST-AZL-2021004-021</p><p>$22.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Suni</p><p>VST-MLT-2021004-022</p><p>$32.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Vestido Roberta</p><p>VST-MLT-2021004-023</p><p>$16.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Pantalón Lorenza</p><p>PNT-CFE-2021004-024</p><p>$28.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Mom jeans Mónica</p><p>PNT-AZL-2021004-026</p><p>$28.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Falda dark velvet</p><p>FLD-NGR-2021004-027</p><p>$16.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Falda conchitas de mar</p><p>FLD-MLT-2021004-028</p><p>$12.000</p></div>
+        <div class='label'><img src='./AmigasVntg_800px.png'><p class='name'>Falda-pantalón Mariana</p><p>FLD-MLT-2021004-030</p><p>$18.000</p></div>
+    </body>
+</html>
