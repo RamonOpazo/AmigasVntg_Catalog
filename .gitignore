@@ -2,3 +2,4 @@ auth.json
 auth-checkpoint.json
 *clients.pkl
 *clients-checkpoint.pkl
+.ipynb_checkpoints
